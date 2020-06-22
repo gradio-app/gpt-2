@@ -1,0 +1,2 @@
+transformers
+tensorflow == 2.1
