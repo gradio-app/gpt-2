@@ -9,8 +9,7 @@ def get_model(name="gpt2"):
     return model, tokenizer
 
 
-def predict(inp, context):
-    model, tokenizer = context
+def predict(inp):
     input_ids = tokenizer.encode(inp, return_tensors='tf')
     beam_output = model.generate(input_ids, max_length=100, num_beams=5,
                                  no_repeat_ngram_size=2, early_stopping=True)
